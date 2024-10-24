@@ -1,0 +1,174 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+
+body {
+    overflow: hidden; /* Impede o scroll na página */
+    height: 100vh; /* Adicionando altura total da viewport */
+    background-image: url('imgs/teste.jpg'); /* Definindo a imagem de fundo */
+    background-size: cover; /* Fazendo a imagem cobrir todo o fundo */
+    background-position: center; /* Centralizando a imagem */
+    background-repeat: no-repeat; /* Evitando que a imagem se repita */
+    background-color: rgba(57, 57, 70, 0.2); /* Cor de fundo de fallback mais escura */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Espaço entre o logo e o texto */
+    align-items: center; /* Alinhando verticalmente ao centro */
+    padding: 10px 20px; /* Adicionando preenchimento */
+    border: 1px transparent rgba(255, 255, 255, 0.2); /* Borda com transparência */
+    border-radius: 15px; /* Bordas arredondadas */
+    background: rgba(66, 62, 62, 0.2); /* Fundo preto semitransparente */
+    backdrop-filter: blur(15px); /* Efeito de desfoque mais intenso */
+    -webkit-backdrop-filter: blur(15px); /* Efeito de desfoque para navegadores WebKit */   
+}
+
+.navbar .logo img {
+    width: 80px; /* Definindo a largura da imagem */
+    height: auto; /* Mantendo a proporção da imagem */
+    margin: 0; /* Removendo margens da imagem */
+    display: block; /* Garantindo que a imagem não tenha comportamento de bloco */
+    vertical-align: top; /* Alinhando verticalmente ao topo */
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.8)) /* Sombra neon azul */
+            drop-shadow(0 0 10px rgba(0, 255, 255, 0.6)); /* Sombra neon mais intensa */
+    animation: logoAnimation 2s infinite; /* Aplicando a animação */
+}
+
+.navbar ul {
+    display: flex; /* Adicionando display flex para alinhar os itens horizontalmente */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+.navbar ul li {
+    margin-left: 20px; /* Adicionando espaço à esquerda dos itens do menu */
+    margin-top: 0; /* Removendo margem superior */
+    font-size: 20px; /* Tamanho da fonte */
+    transition: color 0.3s; /* Transição suave para a cor do texto */
+}
+
+.navbar ul li:hover {
+    color: rgba(0, 255, 255, 1); /* Mudando a cor do texto ao passar o mouse */
+}
+
+.Experience {
+    border: 2px solid rgba(0, 255, 255, 0.6); /* Borda com leve transparência */
+    border-radius: 45px; /* Bordas arredondadas */
+    padding: 18px 20px; /* Preenchimento interno para dar espaço ao texto */
+    color: rgb(0, 255, 255); /* Cor do texto */
+    background-color: transparent; /* Sem cor de fundo */
+    text-align: center; /* Centralizando o texto */
+    cursor: pointer; /* Mudando o cursor para indicar que é clicável */
+    transition: background-color 0.3s, color 0.3s; 
+    animation: colorChange 3s infinite; /* Aplicando a animação ao botão */
+}
+
+.Experience:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Efeito de hover com fundo semitransparente */
+    color: rgba(255, 255, 255, 1); /* Mudando a cor do texto ao passar o mouse */
+}
+
+.card-container {
+    position: relative; /* Para permitir o posicionamento absoluto dos cards */
+    height: 100vh; /* Altura total da viewport */
+    padding: 0 20px; 
+    display: flex; /* Usando flexbox para alinhar os cards */
+    justify-content: space-around; /* Espaço uniforme entre os cards */
+    align-items: center; /* Alinhando verticalmente ao centro */ /* Margem superior */
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1); /* Fundo semitransparente */
+    border-radius: 15px; /* Bordas arredondadas */
+    padding: 16px; /* Preenchimento interno */
+    width: 20%; /* Largura dos cards */
+    height: 350px;
+    text-align: center; /* Centralizando o texto */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */   
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+    color: white; /* Cor do texto */
+    transition: background 0.3s ease, transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease; /* Adicionando transição suave */
+    border: 2px solid transparent;
+    margin-bottom: 80px; /* Definindo uma borda padrão para evitar mudanças bruscas */
+    display: flex; /* Adiciona flexbox para centralizar o conteúdo */
+    flex-direction: column; /* Alinha os itens na coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.1), rgba(198, 195, 198, 0.224)); /* Gradiente de fundo */
+    background-size: 200% 200%; /* Tamanho do fundo para permitir a animação */
+    animation: pulseAnimation 4s ease-in-out infinite; /* Animação de pulsação */
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 4px 30px rgba(0, 255, 242, 0.861);
+}
+    
+.card i {
+    font-size: 65px; /* Aumenta o tamanho do ícone */
+    margin-bottom: 10px; /* Adiciona espaço abaixo do ícone */
+}
+
+@keyframes logoAnimation {
+    0% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(23deg);
+    }
+    100% {
+        transform: scale(1.1) rotate(0deg);
+    }
+}
+
+
+@keyframes colorChange {
+    0% {
+        border: 2px solid rgb(0, 255, 255);
+        background-color: rgba(0, 255, 255, 0.1); /* Cor inicial */
+        color: rgb(0, 255, 255); /* Cor do texto inicial */
+    }
+    25% {
+        border: 2px solid  rgb(255, 0, 255);
+        background-color: rgba(255, 0, 255, 0.1); /* Cor intermediária 1 */
+        color: rgb(255, 0, 255); /* Cor do texto intermediária 1 */
+    }
+    50% {
+        border: 2px solid rgb(0, 255, 255);
+        background-color: rgba(255, 255, 0, 0.1); /* Cor intermediária 2 */
+        color: rgb(255, 255, 0); /* Cor do texto intermediária 2 */
+    }
+    75% {
+        border: 2px solid rgb(0, 255, 0);
+        background-color: rgba(0, 255, 0, 0.1); /* Cor intermediária 3 */
+        color: rgb(0, 255, 0); /* Cor do texto intermediária 3 */
+    }
+    100% {
+        border: 2px solid rgb(0, 255, 255);
+        background-color: rgba(0, 255, 255, 0.1); /* Volta à cor inicial */
+        color: rgb(0, 255, 255); /* Volta à cor do texto inicial */
+    }
+}
+
+
+@keyframes pulseAnimation {
+    0% {
+        background-position: 0% 50%;
+        transform: scale(1) rotate(0deg);
+    }
+     50% {
+        background-position: 100% 50%;
+        transform: scale(1.04) rotate(-1deg); /* Aumenta levemente o tamanho */
+    }
+    100% {
+        background-position: 0% 50%;
+        transform: scale(1) rotate(0.5deg);
+    }
+}
