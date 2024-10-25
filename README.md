@@ -1,1 +1,1 @@
-![Portfolio Image](https://prnt.sc/UT_XNbl02FLb)
+![Simple Image](https://raw.githubusercontent.com/yui333/portofolio1/main/imgs/simple.png)
